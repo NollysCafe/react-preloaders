@@ -8,6 +8,7 @@ import { Zoom } from './preloaders/Zoom/Zoom'
 import { Cube } from './preloaders/Cube/Cube'
 import { Ripple } from './preloaders/Ripple/Ripple'
 import { Sugar } from './preloaders/Sugar/Sugar'
+import { Planets } from './preloaders/Planets/Planets'
 
 export default function App(): React.ReactElement {
 	return (
@@ -40,6 +41,10 @@ export default function App(): React.ReactElement {
 
 			<h2>Sugar</h2>
 			<Sugar fullScreen color='#f39c12' size={80} duration={1.2} />
+			<br />
+
+			<h2>Planets</h2>
+			<Planets fullScreen color='turquoise' duration={10} />
 		</main>
 	)
 }

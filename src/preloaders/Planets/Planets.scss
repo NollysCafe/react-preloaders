@@ -1,0 +1,68 @@
+.planets {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+
+	.orbit {
+		position: relative;
+		border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		animation: spin linear infinite;
+		box-sizing: border-box;
+	}
+
+	.earth {
+		width: 250px;
+		height: 250px;
+		animation-duration: var(--orbit-duration, 12s);
+	}
+
+	.venus {
+		width: 170px;
+		height: 170px;
+		animation-duration: calc(var(--orbit-duration, 12s) * 0.7);
+	}
+
+	.mercury {
+		width: 100px;
+		height: 100px;
+		animation-duration: calc(var(--orbit-duration, 12s) * 0.3);
+	}
+
+	.planet {
+		position: absolute;
+		top: -6px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: currentColor;
+	}
+
+	.sun {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: radial-gradient(circle at 30% 30%, #ffd591, #ff8c00);
+		box-shadow: 0 0 20px #ff8c00aa;
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	&.full-screen {
+		width: 100vw;
+		height: 100vh;
+	}
+}
