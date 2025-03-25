@@ -1,0 +1,38 @@
+.navbar {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: #1a1a1a;
+	padding: 1rem 2rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a.logo {
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: #fff;
+			text-decoration: none;
+		}
+
+		nav {
+			display: flex;
+			gap: 1.5rem;
+
+			a {
+				color: #ccc;
+				text-decoration: none;
+				font-weight: 500;
+
+				&:hover,
+				&.active {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
