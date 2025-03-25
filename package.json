@@ -18,8 +18,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist/ && tsc -b && vite build --config vite.build.config.ts",
-    "build:demo": "rm -rf dist/ && tsc -b && vite build --config vite.build.config.ts",
+    "build": "rm -rf dist && tsc -b && vite build --config vite.build.config.ts",
+    "build:demo": "rm -rf demo/dist && tsc -b && vite build --config vite.config.ts",
     "preview:demo": "vite build && vite preview --config vite.config.ts",
     "deploy:demo": "pnpm build:demo && gh-pages -d demo/dist",
     "prepare": "pnpm run build"

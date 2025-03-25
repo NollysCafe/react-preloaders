@@ -10,7 +10,7 @@ import Docs from './pages/Docs'
 
 export default function App(): React.ReactElement {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename='/react-preloaders'>
 			<Navbar />
 
 			<Routes>
