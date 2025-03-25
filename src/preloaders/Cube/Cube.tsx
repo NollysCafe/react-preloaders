@@ -2,16 +2,38 @@ import React from 'react'
 
 import './Cube.scss'
 
+/**
+ * Props for the Cube preloader.
+ */
 export interface CubeProps {
+	/**
+	 * Color of all cube faces (default: `#2D2D2D`)
+	 */
 	color?: string
+	/**
+	 * Width/height of the cube (default: `64`)
+	 */
 	size?: number
+	/**
+	 * Duration of one full rotation in seconds (default: `3`)
+	 */
 	duration?: number
+	/**
+	 * Whether the loader fills the full screen (default: `false`)
+	 */
 	fullScreen?: boolean
+	/**
+	 * Optional additional class names
+	 */
 	className?: string
 }
 
 /**
- * Real 3D rotating cube preloader using perspective and transforms.
+ * Cube preloader:
+ * A 3D cube that spins on both X and Y axes using CSS perspective.
+ *
+ * @example
+ * <Cube size={80} color="#ff69b4" duration={2.5} />
  */
 export const Cube = ({ color = '#2D2D2D', size = 64, duration = 3, fullScreen = false, className = '' }: CubeProps): React.ReactElement => {
 	return (
