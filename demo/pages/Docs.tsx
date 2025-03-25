@@ -6,7 +6,7 @@ import { getRandomColor } from '../utils/colors'
 import '../styles/pages/docs.scss'
 
 // Components
-import { Preloader } from '@/'
+import { Preloader } from '../../src/core/Preloader'
 
 export default function Docs(): React.ReactElement {
 	const { component } = useParams()
@@ -131,7 +131,7 @@ export default function Docs(): React.ReactElement {
 				<button className='preview-btn' onClick={handleFullscreen}>Preview Fullscreen</button>
 			</div>
 			{showFullscreen && (
-				<Preloader customLoading={showFullscreen} time={fullscreenValues['time']} animation={fullscreenValues['animation']} background={fullscreenValues['useBlur'] ? 'blur' : fullscreenValues['background']}>
+				<Preloader customLoading={showFullscreen} time={fullscreenValues['time']} animation={fullscreenValues['animation'] as any} background={fullscreenValues['useBlur'] ? 'blur' : fullscreenValues['background']}>
 					<PreloaderComponent {...values} fullScreen />
 				</Preloader>
 			)}

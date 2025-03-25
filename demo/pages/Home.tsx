@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import {
 	Dots, Lines, Zoom, Square, Ripple,
 	Sugar, Planets, Cube, Spinner3D, Tunnel
-} from '@/'
+} from '../../src/'
 
 export default function Home(): React.ReactElement {
 	return (

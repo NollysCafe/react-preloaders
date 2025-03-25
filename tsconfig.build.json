@@ -5,7 +5,12 @@
     "emitDeclarationOnly": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "stripInternal": true
+    "stripInternal": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src", "src/styles.d.ts"]
 }

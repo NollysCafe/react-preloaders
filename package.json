@@ -19,8 +19,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --config vite.build.config.ts",
-    "preview": "vite preview",
+    "build": "rm -rf dist/ && tsc -b && vite build --config vite.build.config.ts",
+    "preview:demo": "vite build && vite preview --config vite.config.ts",
     "prepare": "pnpm run build"
   },
   "dependencies": {
