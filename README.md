@@ -6,6 +6,7 @@
 <img src='https://img.shields.io/github/last-commit/nollyscafe/react-preloaders?style=flat-square' alt='last commit' />
 <img src='https://img.shields.io/badge/License-NFE--OSL-purple?style=flat-square' alt='license' />
 <img src='https://img.shields.io/bundlephobia/minzip/@nolly-cafe/react-preloaders?style=flat-square' alt='bundle size' />
+<a href='https://github.com/NollysCafe/react-preloaders/wiki'><img src='https://img.shields.io/badge/Wiki-Read%20Now-blue?style=flat-square' alt='docs' /></a>
 
 ---
 
