@@ -5,7 +5,7 @@ import { Preloader } from './lib/Preloader'
 import { Dots } from './preloaders/Dots/Dots'
 import { Lines } from './preloaders/Lines/Lines'
 import { Zoom } from './preloaders/Zoom/Zoom'
-import { Cube } from './preloaders/Cube/Cube'
+import { Square } from './preloaders/Square/Square'
 import { Ripple } from './preloaders/Ripple/Ripple'
 import { Sugar } from './preloaders/Sugar/Sugar'
 import { Planets } from './preloaders/Planets/Planets'
@@ -32,7 +32,7 @@ export default function App(): React.ReactElement {
 			<br />
 
 			<h2>Cube</h2>
-			<Cube fullScreen color='hotpink' size={80} borderWidth={3} duration={1.8} />
+			<Square fullScreen color='hotpink' size={80} borderWidth={3} duration={1.8} />
 			<br />
 
 			<h2>Ripple</h2>
