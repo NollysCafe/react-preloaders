@@ -1,17 +1,17 @@
 import React from 'react'
 
 // Components
-import { Preloader } from './lib/Preloader'
-import { Dots } from './preloaders/Dots/Dots'
-import { Lines } from './preloaders/Lines/Lines'
-import { Zoom } from './preloaders/Zoom/Zoom'
-import { Square } from './preloaders/Square/Square'
-import { Ripple } from './preloaders/Ripple/Ripple'
-import { Sugar } from './preloaders/Sugar/Sugar'
-import { Planets } from './preloaders/Planets/Planets'
-import { Cube } from './preloaders/Cube/Cube'
-import { Spinner3D } from './preloaders/Spinner3D/Spinner3D'
-import { Tunnel } from './preloaders/Tunnel/Tunnel'
+import { Preloader } from '@/core/Preloader'
+import { Dots } from '@/components/Dots/Dots'
+import { Lines } from '@/components/Lines/Lines'
+import { Zoom } from '@/components/Zoom/Zoom'
+import { Square } from '@/components/Square/Square'
+import { Ripple } from '@/components/Ripple/Ripple'
+import { Sugar } from '@/components/Sugar/Sugar'
+import { Planets } from '@/components/Planets/Planets'
+import { Cube } from '@/components/Cube/Cube'
+import { Spinner3D } from '@/components/Spinner3D/Spinner3D'
+import { Tunnel } from '@/components/Tunnel/Tunnel'
 
 export default function App(): React.ReactElement {
 	return (

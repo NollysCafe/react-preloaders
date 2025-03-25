@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --config vite.build.config.ts",
     "preview": "vite preview",
     "prepare": "pnpm run build"
   },

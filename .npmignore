@@ -11,3 +11,5 @@ node_modules/
 tsconfig.*
 vite.config.ts
 README.md
+vite.build.config.ts
+demo/
