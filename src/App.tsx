@@ -9,6 +9,7 @@ import { Square } from './preloaders/Square/Square'
 import { Ripple } from './preloaders/Ripple/Ripple'
 import { Sugar } from './preloaders/Sugar/Sugar'
 import { Planets } from './preloaders/Planets/Planets'
+import { Cube } from './preloaders/Cube/Cube'
 
 export default function App(): React.ReactElement {
 	return (
@@ -45,6 +46,10 @@ export default function App(): React.ReactElement {
 
 			<h2>Planets</h2>
 			<Planets fullScreen color='turquoise' duration={10} />
+			<br />
+
+			<h2>Cube (3D)</h2>
+			<Cube fullScreen color='goldenrod' size={80} duration={4} />
 		</main>
 	)
 }
