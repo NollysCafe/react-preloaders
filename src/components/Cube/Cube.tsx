@@ -1,4 +1,5 @@
 import React from 'react'
+import { definePreloaderMeta } from '../../utils/definePreloaderMeta'
 
 import './Cube.scss'
 
@@ -51,3 +52,16 @@ export const Cube = ({ color = '#2D2D2D', size = 64, duration = 3, fullScreen = 
 		</div>
 	)
 }
+
+export const cubeMeta = definePreloaderMeta({
+	name: 'Cube',
+	description: 'A 3D cube that spins on both X and Y axes using CSS perspective.',
+	example: `<Cube size={80} color="#ff69b4" duration={2.5} />`,
+	props: [
+		{ name: 'color', type: 'string', default: '#2D2D2D', desc: 'Color of all cube faces.' },
+		{ name: 'size', type: 'number', default: '64', desc: 'Width/height of the cube.' },
+		{ name: 'duration', type: 'number', default: '3', desc: 'Duration of one full rotation in seconds.' },
+		{ name: 'fullScreen', type: 'boolean', default: 'false', desc: 'Whether the loader fills the full screen.' },
+		{ name: 'className', type: 'string', default: '', desc: 'Optional additional class names' },
+	],
+}, Cube)

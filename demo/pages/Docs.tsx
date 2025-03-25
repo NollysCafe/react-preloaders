@@ -1,42 +1,44 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { docsMeta } from '../data/docs'
-
+import { preloaders } from '../utils/collectPreloaders'
 import '../styles/pages/docs.scss'
-
-const allKeys = Object.keys(docsMeta)
 
 export default function Docs(): React.ReactElement {
 	const { component } = useParams()
 	const navigate = useNavigate()
 	const [search, setSearch] = React.useState('')
 
+	// If no specific component, show list + search
 	if (!component) {
-		const filtered = allKeys.filter(k => k.includes(search.toLowerCase()))
+		const entries = Object.entries(preloaders).filter(([key]) =>
+			key.toLowerCase().includes(search.toLowerCase())
+		)
 
 		return (
 			<main className='page docs'>
 				<h1>All Preloaders</h1>
-				<input className='search' placeholder='Search a loader...' value={search} onChange={e => setSearch(e.target.value)} />
+				<input
+					className='search'
+					placeholder='Search a loader...'
+					value={search}
+					onChange={e => setSearch(e.target.value)}
+				/>
 
 				<div className='grid'>
-					{filtered.map(key => {
-						const { name, component: Comp } = docsMeta[key]
-						return (
-							<div className='card' key={key} onClick={() => navigate(`/docs/${key}`)}>
-								<h3>{name}</h3>
-								<div className='preview'>
-									<Comp />
-								</div>
+					{entries.map(([key, { name, component: Comp }]) => (
+						<div className='card' key={key} onClick={() => navigate(`/docs/${key}`)}>
+							<h3>{name}</h3>
+							<div className='preview'>
+								<Comp />
 							</div>
-						)
-					})}
+						</div>
+					))}
 				</div>
 			</main>
 		)
 	}
 
-	const meta = docsMeta[component.toLowerCase()]
+	const meta = preloaders[component.toLowerCase()]
 	if (!meta) {
 		return (
 			<main className='page docs'>
@@ -68,7 +70,7 @@ export default function Docs(): React.ReactElement {
 					</tr>
 				</thead>
 				<tbody>
-					{props.map(({ name, type, default: def, desc }) => (
+					{props.map(({ name, type, default: def, desc }: any) => (
 						<tr key={name}>
 							<td><code>{name}</code></td>
 							<td><code>{type}</code></td>
