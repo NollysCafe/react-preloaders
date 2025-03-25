@@ -3,6 +3,7 @@ import path from 'path'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+	base: '/react-preloaders/',
 	root: path.resolve(__dirname, 'demo'),
 	plugins: [react()],
 	publicDir: path.resolve(__dirname, 'demo', 'public'),

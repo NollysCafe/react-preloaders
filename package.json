@@ -19,7 +19,9 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist/ && tsc -b && vite build --config vite.build.config.ts",
+    "build:demo": "rm -rf dist/ && tsc -b && vite build --config vite.build.config.ts",
     "preview:demo": "vite build && vite preview --config vite.config.ts",
+    "deploy:demo": "pnpm build:demo && gh-pages -d demo/dist",
     "prepare": "pnpm run build"
   },
   "dependencies": {
@@ -32,6 +34,7 @@
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
     "sass": "^1.86.0",
     "typescript": "~5.6.3",
     "vite": "^6.2.3"
