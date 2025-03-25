@@ -1,0 +1,33 @@
+.lines {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: var(--line-gap, 8px);
+	width: auto;
+	height: auto;
+
+	.line {
+		width: var(--line-width, 4px);
+		height: var(--line-height, 30px);
+		background-color: currentColor;
+		animation: bounce-line var(--line-duration, 1s) ease-in-out infinite;
+	}
+
+	@keyframes bounce-line {
+
+		0%,
+		100% {
+			transform: scaleY(0.3);
+		}
+
+		50% {
+			transform: scaleY(1);
+		}
+	}
+
+	&.full-screen {
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+	}
+}
