@@ -1,9 +1,68 @@
-.preloader {
+.preloader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 1.5rem;
-	background-color: white;
+	z-index: 9999;
+	backdrop-filter: blur(4px);
+
+	&.preloader-fade {
+		opacity: 1;
+		transition: opacity 0.4s ease;
+	}
+
+	&.preloader-fade-exit {
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease;
+	}
+
+	&.preloader-slide-up {
+		transform: translateY(0);
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-up-exit {
+		transform: translateY(-100%);
+		pointer-events: none;
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-down {
+		transform: translateY(0);
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-down-exit {
+		transform: translateY(100%);
+		pointer-events: none;
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-left {
+		transform: translateX(0);
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-left-exit {
+		transform: translateX(-100%);
+		pointer-events: none;
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-right {
+		transform: translateX(0);
+		transition: transform 0.5s ease;
+	}
+
+	&.preloader-slide-right-exit {
+		transform: translateX(100%);
+		pointer-events: none;
+		transition: transform 0.5s ease;
+	}
 }
