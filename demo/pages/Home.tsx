@@ -75,7 +75,7 @@ export default function Home(): React.ReactElement {
 						<div key={name} className='card'>
 							<h3>{name}</h3>
 							<div className='loader'>{component}</div>
-							<a href={`/docs/${name.toLowerCase()}`}>View docs</a>
+							<Link to={`/docs/${name.toLowerCase()}`}>View docs</Link>
 						</div>
 					))}
 				</div>

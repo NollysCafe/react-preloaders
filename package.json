@@ -5,6 +5,8 @@
   "license": "NFE-OSL v1.0",
   "description": "🌈 Fully customizable, ultra-dev-friendly React preloaders — built with SCSS and TypeScript",
   "repository": "https://github.com/nollyscafe/react-preloaders",
+  "homepage": "https://nollyscafe.github.io/react-preloaders/",
+  "author": "Nolly Cafe <cafe.thenolle.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -37,7 +39,8 @@
     "gh-pages": "^6.3.0",
     "sass": "^1.86.0",
     "typescript": "~5.6.3",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "vite-plugin-static-copy": "^2.3.0"
   },
   "keywords": [
     "react",
