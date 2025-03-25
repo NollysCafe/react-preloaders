@@ -1,4 +1,5 @@
 import React from 'react'
+import { definePreloaderMeta } from '../../utils/definePreloaderMeta'
 
 import './Lines.scss'
 
@@ -54,3 +55,19 @@ export const Lines = ({ color = '#2D2D2D', count = 6, barWidth = 4, barHeight = 
 		</div>
 	)
 }
+
+export const linesMeta = definePreloaderMeta({
+	name: 'Lines',
+	description: 'Equalizer-style bars bounce up and down in a wave sequence.',
+	example: `<Lines count={8} barWidth={5} barHeight={40} gap={6} duration={0.9} color="#00bcd4" />`,
+	props: [
+		{ name: 'color', type: 'string', default: '#2D2D2D', desc: 'Color of the lines.' },
+		{ name: 'count', type: 'number', default: '6', desc: 'Number of vertical bars to show.' },
+		{ name: 'barWidth', type: 'number', default: '4', desc: 'Width of each line in pixels.' },
+		{ name: 'barHeight', type: 'number', default: '30', desc: 'Height of each line in pixels.' },
+		{ name: 'gap', type: 'number', default: '8', desc: 'Gap between lines in pixels.' },
+		{ name: 'duration', type: 'number', default: '1', desc: 'Duration of one animation cycle in seconds.' },
+		{ name: 'fullScreen', type: 'boolean', default: 'false', desc: 'Whether to center the loader full screen.' },
+		{ name: 'className', type: 'string', default: '', desc: 'Extra className(s) to apply to the wrapper.' },
+	],
+}, Lines)

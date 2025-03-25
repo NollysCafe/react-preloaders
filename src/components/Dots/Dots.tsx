@@ -1,4 +1,5 @@
 import React from 'react'
+import { definePreloaderMeta } from '../../utils/definePreloaderMeta'
 
 import './Dots.scss'
 
@@ -50,3 +51,18 @@ export const Dots = ({ color = '#2D2D2D', size = 12, gap = 10, duration = 0.7, c
 		</div>
 	)
 }
+
+export const dotsMeta = definePreloaderMeta({
+	name: 'Dots',
+	description: 'Bouncing dots in a sequence.',
+	example: `<Dots color="#f0f" size={16} count={6} gap={12} duration={1} />`,
+	props: [
+		{ name: 'color', type: 'string', default: '#2D2D2D', desc: 'Color of the dots.' },
+		{ name: 'size', type: 'number', default: '12', desc: 'Size (diameter) of each dot in pixels.' },
+		{ name: 'gap', type: 'number', default: '10', desc: 'Gap between the dots in pixels.' },
+		{ name: 'duration', type: 'number', default: '0.7', desc: 'Duration of the bounce animation in seconds.' },
+		{ name: 'count', type: 'number', default: '4', desc: 'Number of dots to display.' },
+		{ name: 'fullScreen', type: 'boolean', default: 'false', desc: 'Whether the loader fills the full screen.' },
+		{ name: 'className', type: 'string', default: '', desc: 'Additional class names for the container.' }
+	]
+}, Dots)

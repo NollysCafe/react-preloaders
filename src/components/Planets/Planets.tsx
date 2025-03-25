@@ -1,4 +1,5 @@
 import React from 'react'
+import { definePreloaderMeta } from '../../utils/definePreloaderMeta'
 
 import './Planets.scss'
 
@@ -47,3 +48,15 @@ export const Planets = ({ color = '#2D2D2D', duration = 12, fullScreen = false, 
 		</div>
 	)
 }
+
+export const planetsMeta = definePreloaderMeta({
+	name: 'Planets',
+	description: 'Three orbiting planets circling a central sun — solar system style.',
+	example: `<Planets color="#00bcd4" duration={10} />`,
+	props: [
+		{ name: 'color', type: 'string', default: '#2D2D2D', desc: 'Color of the planets and orbits.' },
+		{ name: 'duration', type: 'number', default: '12', desc: 'Duration of the outermost orbit cycle in seconds.' },
+		{ name: 'fullScreen', type: 'boolean', default: 'false', desc: 'Whether the loader fills the full screen.' },
+		{ name: 'className', type: 'string', default: '', desc: 'Optional additional class names' },
+	],
+}, Planets)
