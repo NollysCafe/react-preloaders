@@ -13,13 +13,11 @@ export default function App(): React.ReactElement {
 		<BrowserRouter>
 			<Navbar />
 
-			<main>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/docs/:component?' element={<Docs />} />
-					<Route path='*' element={<Navigate to='/' />} />
-				</Routes>
-			</main>
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/docs/:component?' element={<Docs />} />
+				<Route path='*' element={<Navigate to='/' />} />
+			</Routes>
 		</BrowserRouter>
 	)
 }
