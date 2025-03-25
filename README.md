@@ -2,10 +2,10 @@
 
 > 🌈 Ultra-dev-friendly, fully customizable preloader components for React — built with **TypeScript**, **SCSS**, and **zero config**.
 
-<img src='https://img.shields.io/npm/v/@nollycafe/react-preloaders.svg?style=flat-square' alt='npm version' />
+<img src='https://img.shields.io/npm/v/@nolly-cafe/react-preloaders.svg?style=flat-square' alt='npm version' />
 <img src='https://img.shields.io/github/last-commit/nollyscafe/react-preloaders?style=flat-square' alt='last commit' />
 <img src='https://img.shields.io/badge/License-NFE--OSL-purple?style=flat-square' alt='license' />
-<img src='https://img.shields.io/bundlephobia/minzip/@nollycafe/react-preloaders?style=flat-square' alt='bundle size' />
+<img src='https://img.shields.io/bundlephobia/minzip/@nolly-cafe/react-preloaders?style=flat-square' alt='bundle size' />
 
 ---
 
@@ -23,9 +23,9 @@
 ## 📦 Install
 
 ```bash
-npm i @nollycafe/react-preloaders
+npm i @nolly-cafe/react-preloaders
 # or
-pnpm add @nollycafe/react-preloaders
+pnpm add @nolly-cafe/react-preloaders
 ```
 
 ---
@@ -33,7 +33,7 @@ pnpm add @nollycafe/react-preloaders
 ## 🧪 Usage
 
 ```tsx
-import { Dots } from '@nollycafe/react-preloaders'
+import { Dots } from '@nolly-cafe/react-preloaders'
 
 function App() {
   return <Dots color='#f0f' count={6} fullScreen />
@@ -78,7 +78,7 @@ function App() {
 You can use the `<Preloader />` wrapper for **your own** animations:
 
 ```tsx
-import { Preloader } from '@nollycafe/react-preloaders'
+import { Preloader } from '@nolly-cafe/react-preloaders'
 
 function CustomLoader() {
   return <div className='my-spinner' />
