@@ -1,6 +1,8 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { preloaders } from '../utils/collectPreloaders'
+import { getRandomColor } from '../utils/colors'
+
 import '../styles/pages/docs.scss'
 
 export default function Docs(): React.ReactElement {
@@ -25,11 +27,11 @@ export default function Docs(): React.ReactElement {
 				/>
 
 				<div className='grid'>
-					{entries.map(([key, { name, component: Comp }]) => (
+					{entries.map(([key, { name, component: PreloaderComponent }]) => (
 						<div className='card' key={key} onClick={() => navigate(`/docs/${key}`)}>
 							<h3>{name}</h3>
 							<div className='preview'>
-								<Comp />
+								<PreloaderComponent color={getRandomColor()} />
 							</div>
 						</div>
 					))}
