@@ -13,17 +13,38 @@ export default function Docs(): React.ReactElement {
 	const navigate = useNavigate()
 
 	const [search, setSearch] = React.useState('')
+	const meta = component ? preloaders[component.toLowerCase()] : null
+	const filteredProps = meta?.props.filter((p: any) => !['className', 'fullScreen'].includes(p.name)) ?? []
+
+	const [values, setValues] = React.useState(() => {
+		const initial: Record<string, any> = {}
+		filteredProps.forEach((prop: any) => {
+			if (prop.type === 'number') initial[prop.name] = Number(prop.default || 1)
+			else if (prop.type === 'boolean') initial[prop.name] = prop.default === 'true'
+			else initial[prop.name] = prop.default
+		})
+		return initial
+	})
+	const handleChange = (name: string, value: any) => setValues(prev => ({ ...prev, [name]: value }))
+
+	const [showFullscreen, setShowFullscreen] = React.useState(false)
+	const [fullscreenValues, setFullscreenValues] = React.useState({
+		time: 2000,
+		background: '#000000',
+		animation: 'fade',
+		useBlur: true
+	})
+	const handleFChange = (name: string, value: any) => setFullscreenValues(prev => ({ ...prev, [name]: value }))
+	const handleFullscreen = () => {
+		setShowFullscreen(true)
+		setTimeout(() => setShowFullscreen(false), fullscreenValues.time)
+	}
 
 	if (!component) {
 		return (
 			<main className='page docs'>
 				<h1>All Preloaders</h1>
-				<input
-					className='search'
-					placeholder='Search a loader...'
-					value={search}
-					onChange={e => setSearch(e.target.value)}
-				/>
+				<input className='search' placeholder='Search a loader...' value={search} onChange={e => setSearch(e.target.value)} />
 
 				<div className='grid'>
 					{Object.entries(preloaders).filter(([key]) => key.toLowerCase().includes(search.toLowerCase())).map(([key, { name, component: PreloaderComponent }]) => (
@@ -48,32 +69,7 @@ export default function Docs(): React.ReactElement {
 		)
 	}
 
-	const { name, description, component: PreloaderComponent, props, example } = preloaders[component.toLowerCase()]
-	const filteredProps = props.filter((prop: any) => prop.name !== 'className').filter((prop: any) => prop.name !== 'fullScreen')
-
-	const [values, setValues] = React.useState<{ [key: string]: any }>(() => {
-		const object: Record<string, any> = {}
-		filteredProps.forEach((prop: any) => {
-			if (prop.type === 'number') object[prop.name] = Number(prop.default)
-			else if (prop.type === 'boolean') object[prop.name] = prop.default === 'true'
-			else object[prop.name] = prop.default
-		})
-		return object
-	})
-	const handleChange = (name: string, value: any) => setValues(prev => ({ ...prev, [name]: value }))
-
-	const [showFullscreen, setShowFullscreen] = React.useState<boolean>(false)
-	const [fullscreenValues, setFullscreenValues] = React.useState<{ [key: string]: any }>({
-		time: 2000,
-		background: '#000000',
-		animation: 'fade',
-		useBlur: true
-	})
-	const handleFChange = (name: string, value: any) => setFullscreenValues(prev => ({ ...prev, [name]: value }))
-	const handleFullscreen = () => {
-		setShowFullscreen(true)
-		setTimeout(() => setShowFullscreen(false), fullscreenValues['time'])
-	}
+	const { name, description, component: PreloaderComponent, props, example } = meta
 
 	return (
 		<main className='page docs'>
@@ -91,10 +87,10 @@ export default function Docs(): React.ReactElement {
 						<div className='prop-input' key={name}>
 							<label>{name}</label>
 							{name === 'color'
-								? <input type='color' value={values[name]} onChange={e => handleChange(name, e.target.value)} />
+								? <input type='color' value={values[name] ?? ''} onChange={e => handleChange(name, e.target.value)} />
 								: type === 'boolean'
-									? <input type='checkbox' checked={values[name]} onChange={e => handleChange(name, e.target.checked)} />
-									: <input type={type === 'number' ? 'number' : 'text'} value={values[name]} onChange={e => handleChange(name, type === 'number' ? +e.target.value : e.target.value)} step={name === 'duration' ? 0.1 : undefined} />
+									? <input type='checkbox' checked={values[name] ?? false} onChange={e => handleChange(name, e.target.checked)} />
+									: <input type={type === 'number' ? 'number' : 'text'} value={values[name] ?? (type === 'number' ? 0 : '')} onChange={e => handleChange(name, type === 'number' ? +e.target.value : e.target.value)} step={name === 'duration' ? 0.1 : undefined} />
 							}
 						</div>
 					))}
