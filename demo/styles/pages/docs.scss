@@ -1,0 +1,22 @@
+main.page.docs {
+	padding: 4rem 2rem;
+	max-width: 900px;
+	margin: auto;
+
+	h1 {
+		font-size: 2rem;
+		color: #fff;
+		margin-bottom: 2rem;
+		text-transform: capitalize;
+	}
+
+	.live-preview {
+		padding: 2rem;
+		background-color: #232323;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+}
