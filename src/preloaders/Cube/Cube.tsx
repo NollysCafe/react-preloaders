@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './Cube.scss'
 
 export interface CubeProps {

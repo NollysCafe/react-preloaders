@@ -11,6 +11,7 @@ import { Sugar } from './preloaders/Sugar/Sugar'
 import { Planets } from './preloaders/Planets/Planets'
 import { Cube } from './preloaders/Cube/Cube'
 import { Spinner3D } from './preloaders/Spinner3D/Spinner3D'
+import { Tunnel } from './preloaders/Tunnel/Tunnel'
 
 export default function App(): React.ReactElement {
 	return (
@@ -55,6 +56,10 @@ export default function App(): React.ReactElement {
 
 			<h2>Spinner3D</h2>
 			<Spinner3D fullScreen color='#00bcd4' size={100} duration={1.2} />
+			<br />
+
+			<h2>Tunnel</h2>
+			<Tunnel fullScreen color='violet' size={120} duration={1.4} count={6} />
 		</main>
 	)
 }

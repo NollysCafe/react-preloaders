@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './Square.scss'
 
 export interface SquareProps {
