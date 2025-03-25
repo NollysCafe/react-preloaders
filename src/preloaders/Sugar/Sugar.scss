@@ -1,0 +1,94 @@
+.sugar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: auto;
+
+	.dot-container {
+		position: relative;
+		width: var(--sugar-size, 50px);
+		height: var(--sugar-size, 50px);
+	}
+
+	.dot {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent),
+			currentColor;
+		animation: sugar-bounce var(--sugar-duration, 2.5s) cubic-bezier(0.75, 0, 0.5, 1) infinite;
+		transform-origin: center bottom;
+	}
+
+	.shadow {
+		position: absolute;
+		bottom: -14px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 60%;
+		height: 8px;
+		border-radius: 50%;
+		background-color: rgba(0, 0, 0, 0.2);
+		animation: sugar-shadow var(--sugar-duration, 2.5s) cubic-bezier(0.75, 0, 0.5, 1) infinite;
+		transform-origin: center center;
+	}
+
+	@keyframes sugar-bounce {
+		0% {
+			transform: translateY(0) scale(1);
+		}
+
+		30% {
+			transform: translateY(-60%) scale(1.1, 0.9);
+		}
+
+		50% {
+			transform: translateY(0) scale(0.9, 1.1);
+		}
+
+		65% {
+			transform: translateY(-20%) scale(1.05, 0.95);
+		}
+
+		80% {
+			transform: translateY(0) scale(0.98, 1.02);
+		}
+
+		100% {
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	@keyframes sugar-shadow {
+
+		0%,
+		100% {
+			transform: scale(1);
+			opacity: 0.2;
+		}
+
+		30% {
+			transform: scale(0.7, 0.5);
+			opacity: 0.15;
+		}
+
+		50% {
+			transform: scale(1.3, 0.8);
+			opacity: 0.1;
+		}
+
+		80% {
+			transform: scale(0.9, 0.7);
+			opacity: 0.2;
+		}
+	}
+
+	&.full-screen {
+		width: 100vw;
+		height: 100vh;
+	}
+}

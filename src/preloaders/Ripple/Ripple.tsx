@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './Ripple.scss'
 
 export interface RippleProps {
