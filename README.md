@@ -9,6 +9,10 @@
 
 ---
 
+## Checkout the [demo](https://nollyscafe.github.io/react-preloaders/) for a live preview of all preloaders!
+
+---
+
 ## ✨ Features
 
 - 🔟 10+ unique preloaders (animated with CSS/SCSS)
