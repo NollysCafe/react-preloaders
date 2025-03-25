@@ -10,6 +10,7 @@ import { Ripple } from './preloaders/Ripple/Ripple'
 import { Sugar } from './preloaders/Sugar/Sugar'
 import { Planets } from './preloaders/Planets/Planets'
 import { Cube } from './preloaders/Cube/Cube'
+import { Spinner3D } from './preloaders/Spinner3D/Spinner3D'
 
 export default function App(): React.ReactElement {
 	return (
@@ -50,6 +51,10 @@ export default function App(): React.ReactElement {
 
 			<h2>Cube (3D)</h2>
 			<Cube fullScreen color='goldenrod' size={80} duration={4} />
+			<br />
+
+			<h2>Spinner3D</h2>
+			<Spinner3D fullScreen color='#00bcd4' size={100} duration={1.2} />
 		</main>
 	)
 }

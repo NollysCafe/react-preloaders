@@ -1,0 +1,33 @@
+.spinner3d {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	perspective: 600px;
+
+	.disc {
+		width: var(--spinner-size, 60px);
+		height: var(--spinner-size, 60px);
+		border-radius: 50%;
+		background: radial-gradient(circle at 30% 30%, #fff6, currentColor);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+		animation: spin3d var(--spinner-duration, 1.5s) linear infinite;
+		transform-style: preserve-3d;
+	}
+
+	@keyframes spin3d {
+		from {
+			transform: rotateY(0deg);
+		}
+
+		to {
+			transform: rotateY(360deg);
+		}
+	}
+
+	&.full-screen {
+		width: 100vw;
+		height: 100vh;
+	}
+}
