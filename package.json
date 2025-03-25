@@ -1,0 +1,48 @@
+{
+  "name": "@nollycafe/react-preloaders",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "NFE-OSL v1.0",
+  "description": "🌈 Fully customizable, ultra-dev-friendly React preloaders — built with SCSS and TypeScript",
+  "repository": "https://github.com/nollyscafe/react-preloaders",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "prepare": "pnpm run build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.86.0",
+    "typescript": "~5.6.3",
+    "vite": "^6.2.3"
+  },
+  "keywords": [
+    "react",
+    "preloader",
+    "react-component",
+    "loading",
+    "typescript",
+    "scss",
+    "dev-friendly"
+  ]
+}
