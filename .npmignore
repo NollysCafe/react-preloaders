@@ -1,0 +1,14 @@
+src/
+node_modules/
+.vscode/
+.idea/
+*.config.*
+*.test.*
+*.spec.*
+*.snap
+.gitignore
+tsconfig.*
+vite.config.ts
+README.md
+vite.build.config.ts
+demo/
