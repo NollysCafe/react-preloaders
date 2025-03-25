@@ -1,0 +1,34 @@
+.zoom {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: var(--zoom-gap, 6px);
+	width: auto;
+	height: auto;
+
+	.zoom-bar {
+		width: var(--zoom-width, 6px);
+		height: var(--zoom-height, 50px);
+		background-color: currentColor;
+		animation: zoom-bounce var(--zoom-duration, 1.2s) ease-in-out infinite;
+	}
+
+	@keyframes zoom-bounce {
+
+		0%,
+		40%,
+		100% {
+			transform: scaleY(0.6);
+		}
+
+		20% {
+			transform: scaleY(1);
+		}
+	}
+
+	&.full-screen {
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+	}
+}
