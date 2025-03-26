@@ -7,7 +7,7 @@
   "repository": "https://github.com/nollyscafe/react-preloaders",
   "homepage": "https://nollyscafe.github.io/react-preloaders/",
   "author": "Nolly Cafe <cafe.thenolle.com>",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
