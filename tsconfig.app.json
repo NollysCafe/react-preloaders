@@ -25,5 +25,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "styles.d.ts", "demo/styles", "demo/main.tsx"]
+  "include": ["src", "src/styles.d.ts", "demo/styles", "demo/main.tsx"]
 }
